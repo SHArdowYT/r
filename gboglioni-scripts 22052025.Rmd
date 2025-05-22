@@ -1,0 +1,38 @@
+---
+title: "gboglioni scripts 22052025"
+author: "Matthias Lei"
+date: May 22, 2025
+output:
+    html_document:
+        css: "gboglioni-scripts.css"
+        toc: true
+        toc_depth: 2
+        toc_float:
+            collapsed: true
+            smooth_scroll: true
+---
+
+R style guide: [Tidyverse Style Guide](https://style.tidyverse.org/syntax.html)
+
+
+
+```{r include-all-scripts, results = 'asis', echo = FALSE}
+script_folder <- "./gboblioni"
+script_files <- list.files(path = script_folder, pattern = "\\.R$", full.names = TRUE)
+
+# Source all scripts
+for (script_file in script_files) {
+    cat(paste0("\n\n## Script `", basename(script_file), "`\n\n"))
+    cat("```r\n")
+    cat(readLines(script_file), sep = "\n")
+    cat("\n```\n\n")
+    
+    cat(paste0("\n\n### Output\n\n"))
+    cat("```r\n")
+    cat(capture.output(source(script_file, echo=TRUE)), sep = "\n")
+    cat("\n```\n\n")
+    
+    cat("<br><br><br>\n")
+
+}
+
