@@ -4,6 +4,7 @@ myVector <- c(7, 11, 13)
 # however, like matlab, they are indexed from 1 :c
 print(myVector[1])
 print(myVector[3])
+print(typeof(myVector))
 
 x <- c(1, 3, 6, 2, 7, 4, 8, 1, 0, 8)
 length(x)
@@ -160,7 +161,7 @@ matrix() # matrix
 array() # array
 list() # list
 data.frame() # dataframe
-factor() # vector of strings associated with an indwex
+factor() # vector of strings associated with an index
 as.Date(0) # vector of dates
 ts() # time series
 

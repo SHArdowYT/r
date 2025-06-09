@@ -12,7 +12,11 @@ output:
             smooth_scroll: true
 ---
 
+Root directory: [Root](C:\Users\SHArdow\Projects\github projects\rstudio 21052025\r)
+
 R style guide: [Tidyverse Style Guide](https://style.tidyverse.org/syntax.html)
+
+R colour palette: [R Colour Cheatsheet](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf)
 
 
 
@@ -29,7 +33,9 @@ for (script_file in script_files) {
     
     cat(paste0("\n\n### Output\n\n"))
     cat("```r\n")
-    cat(capture.output(source(script_file, echo=TRUE)), sep = "\n")
+
+    output <- capture.output(source(script_file, echo=TRUE))
+    cat(output, sep = "\n")
     cat("\n```\n\n")
     
     cat("<br><br><br>\n")
