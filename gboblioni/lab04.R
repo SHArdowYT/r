@@ -1,37 +1,4 @@
-vec <- c(2, 4, 6, 8, 3)
-x <- c(1, 9, 0, 0, -5, 9, -5)
 
-# indexes
-vec[2]
-vec[-2]
-vec[2:5]
-vec[c(-1, -5)]
-vec[-c(1, 5)]
-
-# logical masks
-vec[c(FALSE, FALSE, TRUE, TRUE, FALSE)]
-vec[vec >= 4]
-
-# functions
-which.max(x)
-which.min(x)
-which(x == 0)
-
-
-M <- matrix((1:20) ^ 2, nrow = 4, byrow = TRUE)
-M
-
-# 2d index
-M[2, 3]
-M[4, 5]
-M[1, ]
-M[, 1]
-M[1, 2:4]
-M[c(1, 4), ]
-M[1, c(1, 3)]
-M[-1, ] # negative means exclusion, not indexing from the back
-M[1, c(-1, -3)]
-M[nrow(M), ] # indexing from the back (no - 1 because indexing from 1)
 
 
 Y <- data.frame(
